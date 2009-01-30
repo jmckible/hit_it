@@ -1,3 +1,9 @@
 = hit_it
 
 Tracks the hits (views) of assets.
+
+== Installation
+
+  ruby script/plugin install git://github.com/jmckible/hit_it.git 
+  ruby script/generate hit_it_migration
+  rake db:migrate
