@@ -25,4 +25,8 @@ class HitTest < Test::Unit::TestCase
     assert_match /taken/, hit.errors[:month].to_s
   end
   
+  def test_for_named_scope
+    assert_equal Hit.for(2009, 1), [hits(:home_january)]
+  end
+  
 end
