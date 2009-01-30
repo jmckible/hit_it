@@ -7,3 +7,35 @@ Tracks the hits (views) of assets.
   ruby script/plugin install git://github.com/jmckible/hit_it.git 
   ruby script/generate hit_it_migration
   rake db:migrate
+  
+== How it works
+
+Add to an ActiveRecord model like so:
+
+  class Page < ActiveRecord::Base
+    track_hits
+  end
+  
+Any time you'd like to remember a hit, just load an instance and fire away.  Say, within a controller:
+
+  def show
+    @page = Page.find params[:id]
+    @page.hit!
+  end
+  
+== Granularity 
+
+Right now this only works on a monthly basis.  There's a row in the hit table for every object x every month.
+
+== Sums
+
+Here are some things you can do:
+
+  @page.hits.sum(:count)
+  @page.hits.for(2009, 1).sum(:count)
+  
+== Author
+
+* hit_it was created by Jordan McKible http://jordan.mckible.com
+
+* Available on GitHub at http://github.com/jmckible/hit_it/tree/master
