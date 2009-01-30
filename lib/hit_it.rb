@@ -1,5 +1,5 @@
 module HitIt
-  def self.include(base)
+  def self.included(base)
     base.extend ClassMethods
   end
   
@@ -7,6 +7,8 @@ module HitIt
     def track_hits
       return if self.included_modules.include? HitIt::InstanceMethods
       __send__ :include, HitIt::InstanceMethods
+      
+      has_many :hits, :as=>:hitable, :order=>'year, month'
     end
   end
   
