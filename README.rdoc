@@ -1,0 +1,3 @@
+= hit_it
+
+Tracks the hits (views) of assets.
