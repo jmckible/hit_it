@@ -1,0 +1,11 @@
+home_january:
+  hitable: home (Page)
+  year: 2009
+  month: 1
+  count: 10
+
+home_february:
+  hitable: home (Page)
+  year: 2009
+  month: 2
+  count: 4
