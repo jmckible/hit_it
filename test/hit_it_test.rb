@@ -4,7 +4,7 @@ class HitItTest < Test::Unit::TestCase
   fixtures :all
   
   def test_has_many_hits
-    assert_equal pages(:home).hits, hits(:home_january, :home_february)
+    assert_equal hits(:home_january, :home_february), pages(:home).hits
   end
   
   def test_sum_hits

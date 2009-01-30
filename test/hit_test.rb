@@ -4,7 +4,7 @@ class HitTest < Test::Unit::TestCase
   fixtures :all
   
   def test_belongs_to_hitable
-    assert_equal hits(:home_january).hitable, pages(:home)
+    assert_equal pages(:home), hits(:home_january).hitable
   end
   
   def test_requires_hitable
@@ -26,7 +26,7 @@ class HitTest < Test::Unit::TestCase
   end
   
   def test_for_named_scope
-    assert_equal Hit.for(2009, 1), [hits(:home_january)]
+    assert_equal [hits(:home_january)], Hit.for(2009, 1)
   end
   
 end
