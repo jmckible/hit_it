@@ -13,6 +13,10 @@ module HitIt
   end
   
   module InstanceMethods
+    def hit!(date=Date.today)
+      hit = hits.find_or_create_by_year_and_month date.year, date.month
+      hit.increment! :count
+    end
   end
   
 end
