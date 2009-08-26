@@ -1,7 +1,6 @@
-require File.join(File.dirname(__FILE__), 'test_helper')
+require 'test_helper'
 
-class HitTest < Test::Unit::TestCase
-  fixtures :all
+class HitTest < ActiveSupport::TestCase
   
   def test_belongs_to_hitable
     assert_equal pages(:home), hits(:home_january).hitable
