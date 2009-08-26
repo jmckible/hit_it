@@ -3,9 +3,9 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 desc 'Default: run unit tests.'
-task :default => :test
+task :default=>:test
 
-desc 'Test the acts_as_taggable_on_steroids plugin.'
+desc 'Test the hit_it plugin.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.pattern = 'test/**/*_test.rb'
